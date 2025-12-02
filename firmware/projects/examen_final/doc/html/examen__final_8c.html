@@ -1,0 +1,445 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Examen Final: Referencia del archivo C:/Repositorios/Gottig_2C_2025/firmware/projects/examen_final/main/examen_final.c</title>
+<link rel="icon" href="icon.ico" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Examen Final<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('examen__final_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">defines</a> &#124;
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">Referencia del archivo examen_final.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;freertos/FreeRTOS.h&quot;</code><br />
+<code>#include &quot;freertos/task.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="gpio__mcu_8h_source.html">gpio_mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="hc__sr04_8h_source.html">hc_sr04.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="led_8h_source.html">led.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="timer__mcu_8h_source.html">timer_mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="uart__mcu_8h_source.html">uart_mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="analog__io__mcu_8h_source.html">analog_io_mcu.h</a>&quot;</code><br />
+</div>
+<p><a href="examen__final_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:ad4c2441cf961f13d72384212f67413f4" id="r_ad4c2441cf961f13d72384212f67413f4"><td class="memItemLeft" align="right" valign="top">#<a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">define</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4c2441cf961f13d72384212f67413f4">CONFIG_BLINK_PERIOD_medicion_US</a>&#160;&#160;&#160;500000</td></tr>
+<tr class="separator:ad4c2441cf961f13d72384212f67413f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3f58c9d57ba65ff8e43fa817fa739f4" id="r_ae3f58c9d57ba65ff8e43fa817fa739f4"><td class="memItemLeft" align="right" valign="top">#<a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">define</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3f58c9d57ba65ff8e43fa817fa739f4">CONFIG_BLINK_PERIOD_caida_US</a>&#160;&#160;&#160;10000</td></tr>
+<tr class="separator:ae3f58c9d57ba65ff8e43fa817fa739f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92f04683a25906bc612649e986a8072a" id="r_a92f04683a25906bc612649e986a8072a"><td class="memItemLeft" align="right" valign="top">#<a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">define</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92f04683a25906bc612649e986a8072a">Buzzer</a>&#160;&#160;&#160;<a class="el" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a1b3ef28b8ae924f5f3fdfbb0ed7e6f7c">GPIO_6</a></td></tr>
+<tr class="separator:a92f04683a25906bc612649e986a8072a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a06e3f4da38b562fc3b7c290803c1acb5" id="r_a06e3f4da38b562fc3b7c290803c1acb5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06e3f4da38b562fc3b7c290803c1acb5">TimerPresenciaHandler</a> (<a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">void</a> *<a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">param</a>)</td></tr>
+<tr class="memdesc:a06e3f4da38b562fc3b7c290803c1acb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback del timer que notifica a la tarea que detecta la presencia de vehículos.  <br /></td></tr>
+<tr class="separator:a06e3f4da38b562fc3b7c290803c1acb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8751e7daea3427dc40318343b91c5a05" id="r_a8751e7daea3427dc40318343b91c5a05"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8751e7daea3427dc40318343b91c5a05">TimerCaidasHandler</a> (<a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">void</a> *<a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">param</a>)</td></tr>
+<tr class="memdesc:a8751e7daea3427dc40318343b91c5a05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback del timer que notifica a la tarea que detecta una caída.  <br /></td></tr>
+<tr class="separator:a8751e7daea3427dc40318343b91c5a05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a630544a7f0a2cc40d8a7fefab7e2fe70" id="r_a630544a7f0a2cc40d8a7fefab7e2fe70"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a630544a7f0a2cc40d8a7fefab7e2fe70">app_main</a> (<a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">void</a>)</td></tr>
+<tr class="separator:a630544a7f0a2cc40d8a7fefab7e2fe70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a4b201402b14eb456ca504c1bf6b0adaf" id="r_a4b201402b14eb456ca504c1bf6b0adaf"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">distancia_vehiculos</a></td></tr>
+<tr class="separator:a4b201402b14eb456ca504c1bf6b0adaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e6879c2e644aef576bc0b645d19a263" id="r_a6e6879c2e644aef576bc0b645d19a263"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">TaskHandle_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e6879c2e644aef576bc0b645d19a263">deteccion_handle</a> = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="separator:a6e6879c2e644aef576bc0b645d19a263"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf25a91f1feffed3bb55777c5b586325" id="r_abf25a91f1feffed3bb55777c5b586325"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">TaskHandle_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf25a91f1feffed3bb55777c5b586325">deteccion_caidas_handle</a> = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="separator:abf25a91f1feffed3bb55777c5b586325"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac055251434fbe4bf83185812b4fd9018" id="r_ac055251434fbe4bf83185812b4fd9018"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac055251434fbe4bf83185812b4fd9018">umbral_caida</a> = 2850</td></tr>
+<tr class="separator:ac055251434fbe4bf83185812b4fd9018"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7aadfc89188d41d3748328a07e9ca28" id="r_ae7aadfc89188d41d3748328a07e9ca28"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7aadfc89188d41d3748328a07e9ca28">lectura_eje_X</a></td></tr>
+<tr class="separator:ae7aadfc89188d41d3748328a07e9ca28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ab693516a8adc7db803f0875d87daca" id="r_a8ab693516a8adc7db803f0875d87daca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ab693516a8adc7db803f0875d87daca">lectura_eje_y</a></td></tr>
+<tr class="separator:a8ab693516a8adc7db803f0875d87daca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae825c48067b294522dde70447256998" id="r_aae825c48067b294522dde70447256998"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae825c48067b294522dde70447256998">lectura_eje_z</a></td></tr>
+<tr class="separator:aae825c48067b294522dde70447256998"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2d954785e019adb8cf262dbb0964a8b" id="r_af2d954785e019adb8cf262dbb0964a8b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2d954785e019adb8cf262dbb0964a8b">sumatoria_ejes</a></td></tr>
+<tr class="separator:af2d954785e019adb8cf262dbb0964a8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de «define»</h2>
+<a id="a92f04683a25906bc612649e986a8072a" name="a92f04683a25906bc612649e986a8072a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92f04683a25906bc612649e986a8072a">&#9670;&#160;</a></span>Buzzer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#<a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">define</a> Buzzer&#160;&#160;&#160;<a class="el" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a1b3ef28b8ae924f5f3fdfbb0ed7e6f7c">GPIO_6</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="examen__final_8c_source.html#l00048">48</a> del archivo <a class="el" href="examen__final_8c_source.html">examen_final.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="examen__final_8c_source.html#l00167">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="ae3f58c9d57ba65ff8e43fa817fa739f4" name="ae3f58c9d57ba65ff8e43fa817fa739f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3f58c9d57ba65ff8e43fa817fa739f4">&#9670;&#160;</a></span>CONFIG_BLINK_PERIOD_caida_US</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#<a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">define</a> CONFIG_BLINK_PERIOD_caida_US&#160;&#160;&#160;10000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="examen__final_8c_source.html#l00047">47</a> del archivo <a class="el" href="examen__final_8c_source.html">examen_final.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="examen__final_8c_source.html#l00167">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="ad4c2441cf961f13d72384212f67413f4" name="ad4c2441cf961f13d72384212f67413f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4c2441cf961f13d72384212f67413f4">&#9670;&#160;</a></span>CONFIG_BLINK_PERIOD_medicion_US</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#<a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">define</a> CONFIG_BLINK_PERIOD_medicion_US&#160;&#160;&#160;500000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="examen__final_8c_source.html#l00046">46</a> del archivo <a class="el" href="examen__final_8c_source.html">examen_final.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="examen__final_8c_source.html#l00167">app_main()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de funciones</h2>
+<a id="a630544a7f0a2cc40d8a7fefab7e2fe70" name="a630544a7f0a2cc40d8a7fefab7e2fe70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a630544a7f0a2cc40d8a7fefab7e2fe70">&#9670;&#160;</a></span>app_main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">void</a> app_main </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">void</a></td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="examen__final_8c_source.html#l00167">167</a> del archivo <a class="el" href="examen__final_8c_source.html">examen_final.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="analog__io__mcu_8h_source.html#l00038">ADC_SINGLE</a>, <a class="el" href="analog__io__mcu_8c_source.html#l00045">AnalogInputInit()</a>, <a class="el" href="examen__final_8c_source.html#l00048">Buzzer</a>, <a class="el" href="analog__io__mcu_8h_source.html#l00031">CH0</a>, <a class="el" href="analog__io__mcu_8h_source.html#l00032">CH1</a>, <a class="el" href="analog__io__mcu_8h_source.html#l00033">CH2</a>, <a class="el" href="examen__final_8c_source.html#l00047">CONFIG_BLINK_PERIOD_caida_US</a>, <a class="el" href="examen__final_8c_source.html#l00046">CONFIG_BLINK_PERIOD_medicion_US</a>, <a class="el" href="examen__final_8c_source.html#l00053">deteccion_caidas_handle</a>, <a class="el" href="examen__final_8c_source.html#l00052">deteccion_handle</a>, <a class="el" href="examen__final_8c_source.html#l00051">distancia_vehiculos</a>, <a class="el" href="gpio__mcu_8h_source.html#l00054">GPIO_2</a>, <a class="el" href="gpio__mcu_8h_source.html#l00055">GPIO_3</a>, <a class="el" href="gpio__mcu_8h_source.html#l00044">GPIO_OUTPUT</a>, <a class="el" href="gpio__mcu_8c_source.html#l00067">GPIOInit()</a>, <a class="el" href="hc__sr04_8c_source.html#l00034">HcSr04Init()</a>, <a class="el" href="analog__io__mcu_8h_source.html#l00049">analog_input_config_t::input</a>, <a class="el" href="led_8c_source.html#l00031">LedsInit()</a>, <a class="el" href="ili9341_8c_source.html#l00019">NULL</a>, <a class="el" href="uart__mcu_8h_source.html#l00039">serial_config_t::port</a>, <a class="el" href="timer__mcu_8h_source.html#l00040">timer_config_t::timer</a>, <a class="el" href="timer__mcu_8h_source.html#l00032">TIMER_A</a>, <a class="el" href="timer__mcu_8h_source.html#l00034">TIMER_C</a>, <a class="el" href="examen__final_8c_source.html#l00074">TimerCaidasHandler()</a>, <a class="el" href="timer__mcu_8c_source.html#l00067">TimerInit()</a>, <a class="el" href="examen__final_8c_source.html#l00065">TimerPresenciaHandler()</a>, <a class="el" href="timer__mcu_8c_source.html#l00116">TimerStart()</a>, <a class="el" href="uart__mcu_8h_source.html#l00033">UART_CONNECTOR</a> y <a class="el" href="uart__mcu_8c_source.html#l00107">UartInit()</a>.</p>
+
+</div>
+</div>
+<a id="a8751e7daea3427dc40318343b91c5a05" name="a8751e7daea3427dc40318343b91c5a05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8751e7daea3427dc40318343b91c5a05">&#9670;&#160;</a></span>TimerCaidasHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">void</a> TimerCaidasHandler </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">void</a> *</td>          <td class="paramname"><span class="paramname"><em>param</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Callback del timer que notifica a la tarea que detecta una caída. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param</td><td>Puntero a parámetros (no usado). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="examen__final_8c_source.html#l00074">74</a> del archivo <a class="el" href="examen__final_8c_source.html">examen_final.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="examen__final_8c_source.html#l00053">deteccion_caidas_handle</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="examen__final_8c_source.html#l00167">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a06e3f4da38b562fc3b7c290803c1acb5" name="a06e3f4da38b562fc3b7c290803c1acb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06e3f4da38b562fc3b7c290803c1acb5">&#9670;&#160;</a></span>TimerPresenciaHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">void</a> TimerPresenciaHandler </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">void</a> *</td>          <td class="paramname"><span class="paramname"><em>param</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Callback del timer que notifica a la tarea que detecta la presencia de vehículos. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param</td><td>Puntero a parámetros (no usado). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="examen__final_8c_source.html#l00065">65</a> del archivo <a class="el" href="examen__final_8c_source.html">examen_final.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="examen__final_8c_source.html#l00052">deteccion_handle</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="examen__final_8c_source.html#l00167">app_main()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de variables</h2>
+<a id="abf25a91f1feffed3bb55777c5b586325" name="abf25a91f1feffed3bb55777c5b586325"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf25a91f1feffed3bb55777c5b586325">&#9670;&#160;</a></span>deteccion_caidas_handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">TaskHandle_t</a> deteccion_caidas_handle = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="examen__final_8c_source.html#l00053">53</a> del archivo <a class="el" href="examen__final_8c_source.html">examen_final.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="examen__final_8c_source.html#l00167">app_main()</a> y <a class="el" href="examen__final_8c_source.html#l00074">TimerCaidasHandler()</a>.</p>
+
+</div>
+</div>
+<a id="a6e6879c2e644aef576bc0b645d19a263" name="a6e6879c2e644aef576bc0b645d19a263"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e6879c2e644aef576bc0b645d19a263">&#9670;&#160;</a></span>deteccion_handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">TaskHandle_t</a> deteccion_handle = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="examen__final_8c_source.html#l00052">52</a> del archivo <a class="el" href="examen__final_8c_source.html">examen_final.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="examen__final_8c_source.html#l00167">app_main()</a> y <a class="el" href="examen__final_8c_source.html#l00065">TimerPresenciaHandler()</a>.</p>
+
+</div>
+</div>
+<a id="a4b201402b14eb456ca504c1bf6b0adaf" name="a4b201402b14eb456ca504c1bf6b0adaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b201402b14eb456ca504c1bf6b0adaf">&#9670;&#160;</a></span>distancia_vehiculos</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t distancia_vehiculos</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="examen__final_8c_source.html#l00051">51</a> del archivo <a class="el" href="examen__final_8c_source.html">examen_final.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="examen__final_8c_source.html#l00167">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="ae7aadfc89188d41d3748328a07e9ca28" name="ae7aadfc89188d41d3748328a07e9ca28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7aadfc89188d41d3748328a07e9ca28">&#9670;&#160;</a></span>lectura_eje_X</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">uint16_t</a> lectura_eje_X</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="examen__final_8c_source.html#l00055">55</a> del archivo <a class="el" href="examen__final_8c_source.html">examen_final.c</a>.</p>
+
+</div>
+</div>
+<a id="a8ab693516a8adc7db803f0875d87daca" name="a8ab693516a8adc7db803f0875d87daca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ab693516a8adc7db803f0875d87daca">&#9670;&#160;</a></span>lectura_eje_y</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">uint16_t</a> lectura_eje_y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="examen__final_8c_source.html#l00056">56</a> del archivo <a class="el" href="examen__final_8c_source.html">examen_final.c</a>.</p>
+
+</div>
+</div>
+<a id="aae825c48067b294522dde70447256998" name="aae825c48067b294522dde70447256998"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae825c48067b294522dde70447256998">&#9670;&#160;</a></span>lectura_eje_z</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">uint16_t</a> lectura_eje_z</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="examen__final_8c_source.html#l00057">57</a> del archivo <a class="el" href="examen__final_8c_source.html">examen_final.c</a>.</p>
+
+</div>
+</div>
+<a id="af2d954785e019adb8cf262dbb0964a8b" name="af2d954785e019adb8cf262dbb0964a8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2d954785e019adb8cf262dbb0964a8b">&#9670;&#160;</a></span>sumatoria_ejes</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">uint16_t</a> sumatoria_ejes</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="examen__final_8c_source.html#l00058">58</a> del archivo <a class="el" href="examen__final_8c_source.html">examen_final.c</a>.</p>
+
+</div>
+</div>
+<a id="ac055251434fbe4bf83185812b4fd9018" name="ac055251434fbe4bf83185812b4fd9018"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac055251434fbe4bf83185812b4fd9018">&#9670;&#160;</a></span>umbral_caida</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a4b201402b14eb456ca504c1bf6b0adaf">uint16_t</a> umbral_caida = 2850</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="examen__final_8c_source.html#l00054">54</a> del archivo <a class="el" href="examen__final_8c_source.html">examen_final.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_429d80758da54da73083af4edd40d0b3.html">projects</a></li><li class="navelem"><a class="el" href="dir_27944ab7bb24466ec88a2d6056639b8d.html">examen_final</a></li><li class="navelem"><a class="el" href="dir_1ed1e3c680530d9c387637bafe348c1a.html">main</a></li><li class="navelem"><a class="el" href="examen__final_8c.html">examen_final.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>
