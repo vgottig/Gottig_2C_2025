@@ -8,7 +8,7 @@
  *
  * @section hardConn Hardware Connection
  *
- * |   ESP32      | Periferico        |
+ * |   ESP32      | Periferico     |
  * |:------------:|:---------------|
  * | GND          | GND	           | 
  * | GPIO_6       | Buzzer	       | 
@@ -85,57 +85,78 @@ void TimerCaidasHandler(void *param)
  */
 static void medicion_vehiculos(void *pvParameters)
 {
-	while (1)
-	{
-		ulTaskNotifyTake(pdTRUE, portMAX_DELAY); // Espera la notificación del timer 
+    static uint32_t contador_beep = 0; // Contador que simula el tiempo entre beeps sin usar delays largos
 
-		distancia_vehiculos = HcSr04ReadDistanceInCentimeters();
+    while (1)
+    {
+        ulTaskNotifyTake(pdTRUE, portMAX_DELAY); // Espera la notificación del timer
 
-		distancia_vehiculos = distancia_vehiculos * 100; // Convierto los valores a metros
+        distancia_vehiculos = HcSr04ReadDistanceInCentimeters();
 
-		if (distancia_vehiculos > 5)
-			LedOn(LED_1); // LED verde
+        distancia_vehiculos = distancia_vehiculos / 100; // Conversión a metros
 
-		else
+        if (distancia_vehiculos > 5)
+        {
+            LedsOffAll();
+            LedOn(LED_1); // LED verde
+            GPIOOff(Buzzer); // Sin alarma
+            contador_beep = 0; // Se reinicia el contador
+            continue; 
+        }
 
-			LedsOffAll();
+        if (distancia_vehiculos <= 5 && distancia_vehiculos > 3)
+        {
+            LedOn(LED_1); // LED verde
+            LedOn(LED_2); // LED amarillo
 
-		if (distancia_vehiculos < 5 && distancia_vehiculos > 3)
-		{
-			LedOn(LED_1); // LED verde y
-			LedOn(LED_2); // LED amarillo
-			UartSendString(UART_CONNECTOR, "Precaución, vehículo cerca "); // UART_CONNECTOR es un UART externo por los pines GPIO18 y GPIO19
-			UartSendString(UART_CONNECTOR, "\r\n");
+            UartSendString(UART_CONNECTOR, "Precaución, vehículo cerca\r\n"); // UART_CONNECTOR es un UART externo por los pines GPIO18 y GPIO19
 
-			while (distancia_vehiculos < 5 && distancia_vehiculos > 3)
-			{
-				GPIOOn(Buzzer);
-				vTaskDelay(pdMS_TO_TICKS(1000)); // Espera 1 segundo
-				GPIOOff(Buzzer);
-			}
-		}
-		else
-			LedsOffAll();
+            // El buzzer debe sonar cada 1 segundo sin bloquear
+            contador_beep += 500; // La tarea se ejecuta cada 500 ms
 
-		if (distancia_vehiculos < 3)
-		{
-			LedOn(LED_1); // LED verde
-			LedOn(LED_2); // LED amarillo y 
-			LedOn(LED_3); // LED rojo
-			UartSendString(UART_CONNECTOR, "Peligro, vehículo cerca");
-			UartSendString(UART_CONNECTOR, "\r\n");
+            if (contador_beep >= 1000)
+            {
+                // Beep corto no bloqueante 
+                GPIOOn(Buzzer);
+                vTaskDelay(pdMS_TO_TICKS(100)); 
+                GPIOOff(Buzzer);
 
-			while (distancia_vehiculos < 3)
-			{
-				GPIOOn(Buzzer);
-				vTaskDelay(pdMS_TO_TICKS(500)); // Espera 0.5 segundos
-				GPIOOff(Buzzer);
-			}
-		}
-		else
-			LedsOffAll();
-	}
+                contador_beep = 0;
+            }
+
+            continue; 
+        }
+
+        if (distancia_vehiculos <= 3)
+        {
+            LedOn(LED_1); // LED verde        
+            LedOn(LED_2); // LED amarillo y 
+            LedOn(LED_3); // LED rojo
+
+            UartSendString(UART_CONNECTOR, "Peligro, vehículo cerca\r\n");
+
+            // Beep cada 0.5 segundos
+            contador_beep += 500;
+
+            if (contador_beep >= 500)
+            {
+                GPIOOn(Buzzer);
+                vTaskDelay(pdMS_TO_TICKS(100));
+                GPIOOff(Buzzer);
+
+                contador_beep = 0;
+            }
+
+            continue; 
+        }
+
+        // Si por algún motivo la distancia queda fuera de todos los rangos 
+        LedsOffAll();
+        GPIOOff(Buzzer);
+        contador_beep = 0;
+    }
 }
+// Uso los continue para saltar directamente al inicio de la próxima iteración, evitando que se ejecute el resto del código que viene después
 
 /**
  * @brief  Lee el valor del acelerometro en cada eje y calcula la aceleración que va a tener en base a
